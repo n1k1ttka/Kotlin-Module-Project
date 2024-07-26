@@ -1,3 +1,5 @@
 fun main(args: Array<String>) {
-    println("Hello World!")
+    val menu = Menu(name = "menu")
+    menu.show()
+    println("До свидания!")
 }
