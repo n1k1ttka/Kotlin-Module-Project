@@ -1,7 +1,10 @@
-class Note( override val name: String,
-            val list: MutableList<String> = mutableListOf("Выход", "Создать запись")
+class Note(
+        override var name: String = "Имя по-умолчанию",
+        val list: MutableList<String> = mutableListOf("Выход", "Создать запись")
     ): Screen {
 
+    val navigator: Navigator
+        get() = Navigator()
     override fun show() {
         while (true) {
             println("Список записей:")
@@ -14,7 +17,7 @@ class Note( override val name: String,
             }
         }
     }
-    override fun create() {
+    fun create() {
         var text = ""
         while (text == "") {
             println("Введите запись (Пустые строки не допускаются):")
